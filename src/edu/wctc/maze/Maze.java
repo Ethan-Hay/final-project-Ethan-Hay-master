@@ -43,14 +43,16 @@ public class Maze {
             case 'n':
                 try {
                     // TODO Module 6: Enqueue the message "You leave the " + currentRoom.getName()
-
+                    PrintQueue.enqueue("You leave the " + currentRoom.getName());
                     currentRoom = currentRoom.getAdjoiningRoom(action);
                 } catch (NoAdjoiningRoomException e) {
                     // TODO Module 6: Enqueue the exception message
+                    PrintQueue.enqueue("You can't do that here!");
                 }
                 break;
             case 'v':
                 // TODO Module 6: Enqueue the player's inventory string
+                PrintQueue.enqueue(player.getInventory());
                 break;
             case 'r': // 'r' recruit companion
                 // TODO Module 7: Implement recruiting companions from rooms
@@ -63,6 +65,7 @@ public class Maze {
                     currentRoom.performAction(action, player);
                 } catch (InvalidActionException e) {
                     // TODO Module 6: Enqueue the exception message
+                    PrintQueue.enqueue("You can't do that here!");
                 }
                 break;
         }

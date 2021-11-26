@@ -18,8 +18,7 @@ public class Main {
 
         // TODO Module 7: Create a companion factory and pass it to the construction strategy
 
-        // TODO Module 5: Create a construction strategy to replace the static
-        //  createRooms method in main. Use it below.
+       
 
         ZorkConstructionStrategy zork = new ZorkConstructionStrategy();
         
@@ -34,7 +33,7 @@ public class Main {
 
             char command = in.getInput();
             maze.performAction(command);
-
+            PrintQueue.flush();
             // TODO Module 6: Flush the print queue to the output service
         }
 
