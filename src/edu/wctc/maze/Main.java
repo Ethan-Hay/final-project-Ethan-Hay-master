@@ -34,7 +34,7 @@ public class Main {
             char command = in.getInput();
             maze.performAction(command);
             PrintQueue.flush();
-            // TODO Module 6: Flush the print queue to the output service
+            
         }
 
         out.print("GAME OVER");
