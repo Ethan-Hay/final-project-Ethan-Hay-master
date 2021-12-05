@@ -9,8 +9,8 @@ public abstract class Room {
     private String name, description;
     private Map<Character, Room> connectedRooms = new HashMap<>();
 
-    // TODO Module 7: Create a field to hold this room's companion
-
+   
+    public Companion companion;
     public Room(String name, String description) {
         this.name = name;
         this.description = description;
@@ -25,9 +25,10 @@ public abstract class Room {
     }
 
     public String getDescription() {
-        // TODO Module 7: If this room contains a recruitable companion,
-        //  append "{companion_name} is here" to the returned description
-
+        if(companion.getName() != null)
+        {
+            description += (companion.getName() + " is here");
+        }
         return this.description;
     }
 
@@ -63,12 +64,16 @@ public abstract class Room {
 
     public abstract void performAction(char action, Player player) throws InvalidActionException;
 
-    // TODO Module 7: Add method to recruit this room's companion:
-    //  public void recruitCompanion(Player player)
-    //  (Remember to use your PrintQueue to perform output as needed)
+    public void recruitCompanion(Player player)
+    {
+        player.recruitCompanion(companion);
+        PrintQueue.enqueue("You have recruited " + companion.getName());
+    }
+   
+    public void setCompanion(Companion companion)
+    {
 
-    // TODO Module 7: Add a setter method to set this room's companion
-
+    }
     public void setDown(Room room) {
         connectedRooms.put('d', room);
     }

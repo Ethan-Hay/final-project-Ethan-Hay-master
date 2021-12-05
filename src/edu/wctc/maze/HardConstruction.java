@@ -2,8 +2,9 @@ package edu.wctc.maze;
 import edu.wctc.maze.roomimpl.*;
 
 public class HardConstruction implements MazeConstructionStrategy{
-    public Room createRooms() {
+    public Room createRooms(CompanionFactory factory) {
         Room startingRoom = new DarkRoom();
+        startingRoom.setCompanion(factory.getSurlyCompanion());
 
         Room anotherRoom = new BasicRoom();
         startingRoom.setNorth(anotherRoom);

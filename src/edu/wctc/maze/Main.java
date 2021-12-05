@@ -17,12 +17,11 @@ public class Main {
         OutputService out = new ConsoleOutputService();
 
         // TODO Module 7: Create a companion factory and pass it to the construction strategy
-
-       
+        CompanionFactory factory = new InfernalCompanionFactory();
 
         ZorkConstructionStrategy zork = new ZorkConstructionStrategy();
         
-        Maze maze = new Maze(zork.createRooms());
+        Maze maze = new Maze(zork.createRooms(factory));
 
         while (maze.isPlaying()) {
             out.print(maze.getCurrentRoomName());

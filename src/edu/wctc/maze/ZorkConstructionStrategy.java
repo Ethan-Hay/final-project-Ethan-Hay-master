@@ -1,9 +1,11 @@
 package edu.wctc.maze;
 import edu.wctc.maze.roomimpl.*;
 
+
 public class ZorkConstructionStrategy implements MazeConstructionStrategy {
-    public Room createRooms() {
+    public Room createRooms(CompanionFactory factory) {
         Room startingRoom = new BasicRoom();
+        startingRoom.setCompanion(factory.getSurlyCompanion());
 
         Room anotherRoom = new DarkRoom();
         startingRoom.setNorth(anotherRoom);

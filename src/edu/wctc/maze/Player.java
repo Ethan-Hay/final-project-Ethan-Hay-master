@@ -10,12 +10,13 @@ public class Player {
 
     private List<String> inventory = new ArrayList<>();
 
-    // TODO Module 7: Add list of companions
-
-    // TODO Module 7: Add method to add new companion to the list
-
-    // TODO Module 7: Add method to remove a companion from the list
-
+    private List<Companion> companions = new ArrayList<>();
+    public void recruitCompanion(Companion e){
+        companions.add(e);
+    }
+    public void removeCompanion(Companion e){
+        companions.remove(e);
+    }
     public void addToInventory(String item) {
         inventory.add(item);
 

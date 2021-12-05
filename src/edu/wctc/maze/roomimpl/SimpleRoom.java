@@ -5,6 +5,7 @@ import edu.wctc.maze.Player;
 import edu.wctc.maze.PrintQueue;
 import edu.wctc.maze.Room;
 
+
 public class SimpleRoom extends Room {
     public SimpleRoom() {
         super("Simple Room",

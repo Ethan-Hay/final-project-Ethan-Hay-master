@@ -55,7 +55,8 @@ public class Maze {
                 PrintQueue.enqueue(player.getInventory());
                 break;
             case 'r': // 'r' recruit companion
-                // TODO Module 7: Implement recruiting companions from rooms
+                
+                currentRoom.recruitCompanion(player);
                 break;
             default:
                 // 'x' exit

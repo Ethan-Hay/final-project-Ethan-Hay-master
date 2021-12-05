@@ -1,5 +1,4 @@
 package edu.wctc.maze;
-
 public interface MazeConstructionStrategy {
-    Room createRooms();
+    Room createRooms(CompanionFactory factory);
 }
