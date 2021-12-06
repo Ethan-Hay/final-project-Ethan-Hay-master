@@ -25,7 +25,7 @@ public abstract class Room {
     }
 
     public String getDescription() {
-        if(companion.getName() != null)
+        if(companion != null)
         {
             description += (companion.getName() + " is here");
         }
