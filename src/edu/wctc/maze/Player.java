@@ -20,15 +20,19 @@ public class Player {
     public void addToInventory(String item) {
         inventory.add(item);
 
-        // TODO Module 8: Notify all companions the player acquired a new item
-
+        for(var companion : companions)
+        {
+            companion.notifyObserver("Item pickup");
+        }
     }
 
     public void addToScore(int points) {
         score += points;
 
-        // TODO Module 8: Notify all companions the player's score changed
-
+        for(var companion : companions)
+        {
+            companion.notifyObserver("Score change");
+        }
     }
 
     public String getInventory() {
