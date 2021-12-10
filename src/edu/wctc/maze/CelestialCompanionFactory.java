@@ -1,23 +1,14 @@
 package edu.wctc.maze;
 
 public class CelestialCompanionFactory implements CompanionFactory {
+    @Override
     public Companion getFriendlyCompanion()
     {
-        Companion charles = new Companion(){
-            public String getName(){
-                return "Charles the Cherub";
-            }
-        };
-        return charles;
+        return new CharlesCherub();
     }
+    @Override
     public Companion getSurlyCompanion()
     {
-        Companion steve = new Companion() {
-            public String getName()
-            {
-                return "Steve the Seraph";
-            }
-        };
-        return steve;
+        return new SteveSeraph();
     }
 }

@@ -1,23 +1,14 @@
 package edu.wctc.maze;
 
 public class InfernalCompanionFactory implements CompanionFactory{
+    @Override
     public Companion getFriendlyCompanion()
     {
-        Companion doug = new Companion(){
-            public String getName(){
-                return "Doug the Devil";
-            }
-        };
-        return doug;
+       return new DougDevil();
     }
+    @Override
     public Companion getSurlyCompanion()
     {
-        Companion ivan = new Companion() {
-            public String getName()
-            {
-                return "Ivan the Imp";
-            }
-        };
-        return ivan;
+        return new IvanImp();
     }
 }
