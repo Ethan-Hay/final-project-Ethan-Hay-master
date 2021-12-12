@@ -1,6 +1,8 @@
 package edu.wctc.maze;
 
 
+
+
 import edu.wctc.maze.io.ConsoleInputService;
 import edu.wctc.maze.io.ConsoleOutputService;
 import edu.wctc.maze.io.InputService;
@@ -31,8 +33,7 @@ public class Main {
 
             char command = in.getInput();
             maze.performAction(command);
-            PrintQueue.flush();
-            
+            System.out.println(PrintQueue.flush());
         }
 
         out.print("GAME OVER");
